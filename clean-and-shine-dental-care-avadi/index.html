@@ -7,105 +7,207 @@
 <meta name="description" content="Clean and shine dental care, Avadi, Chennai. Book your dental appointment on WhatsApp or call 091235 65996.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,900&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fbfaf7;--surface:#ffffff;--ink:#16211f;--muted:#5b6664;--line:#e6e2da;--accent:#0f766e;--accent-ink:#ffffff;--soft:#e3f1ef}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1514;--surface:#172020;--ink:#eef2f0;--muted:#a3afad;--line:#26302f;--soft:#12302d}}
+:root{--bg:#FDF8F5;--panel:#F8EEE8;--ink:#2a2624;--mut:#6d635d;--line:#e6d9cf;--acc:#FF5400;--on:#1a1310}
+@media (prefers-color-scheme:dark){:root{--bg:#141211;--panel:#1e1b19;--ink:#FDF8F5;--mut:#b8ada6;--line:#342e2a}}
 *{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+html{font-size:clamp(14px,.9vw + .4rem,20px);overflow-x:clip}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--bg);color:var(--ink);font:1rem/1.5 "Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-.preview{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px}
-.preview b{font-weight:600}
-header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.logo{font:600 20px/1.1 Fraunces,serif;letter-spacing:-.01em}
-.logo small{display:block;font:500 12px Inter,sans-serif;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--surface);transition:transform .15s ease}
-.btn:hover{transform:translateY(-1px)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.btn svg{width:18px;height:18px}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end;padding:56px 0 64px}
-.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-h1{font:600 clamp(38px,6vw,64px)/1.02 Fraunces,serif;letter-spacing:-.025em;margin:14px 0 18px}
-.lead{font-size:18px;color:var(--muted);max-width:520px}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px}
-.facts dt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:16px}
-.facts dt:first-child{margin-top:0}
-.facts dd{font-weight:500;margin-top:4px}
-section{padding:64px 0;border-top:1px solid var(--line)}
-h2{font:600 clamp(28px,4vw,40px)/1.1 Fraunces,serif;letter-spacing:-.02em;margin-bottom:28px}
-.services{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.svc{background:var(--surface);padding:24px}
-.svc h3{font-size:17px;font-weight:600;margin-bottom:6px}
-.svc p{color:var(--muted);font-size:15px}
-.book{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-form{display:grid;gap:14px}
-label{font-size:14px;font-weight:500;display:grid;gap:6px}
-input,select{font:inherit;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
-input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px}
-.map{border-radius:20px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--soft)}
-.map iframe{width:100%;height:100%;border:0}
-footer{padding:32px 0 96px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
-.dock{position:fixed;left:0;right:0;bottom:0;display:none;gap:8px;padding:10px 12px;background:var(--surface);border-top:1px solid var(--line)}
-.dock .btn{flex:1;justify-content:center}
-@media (max-width:760px){.hero,.book{grid-template-columns:1fr;gap:28px}.hero{padding:32px 0 48px}header .btn{display:none}.dock{display:flex}section{padding:48px 0}}
-@media (prefers-reduced-motion:reduce){.btn{transition:none}}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.pad{padding-inline:clamp(1rem,4vw,4rem)}
+.disp{font-family:Archivo,"Arial Black",sans-serif;font-weight:900;font-stretch:112%;text-transform:uppercase;letter-spacing:-.03em;line-height:.9}
+.tag{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.preview{background:var(--ink);color:var(--bg);font-size:.75rem;text-align:center;padding:.5rem 1rem}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.1rem}
+.logo{font-weight:600;font-size:1.05rem;letter-spacing:-.01em;max-width:60%}
+nav{display:flex;gap:1.6rem;font-size:.9rem;font-weight:500}
+.ul{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;transition:background-size .35s cubic-bezier(.16,1,.3,1);padding-bottom:2px}
+.ul:hover,.ul:focus-visible{background-size:100% 2px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.95em 1.5em;border-radius:999px;font-weight:600;font-size:1rem;text-decoration:none;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;font-family:inherit;transition:background-color .3s,color .3s,border-color .3s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.go{background:var(--acc);border-color:var(--acc);color:var(--on)}
+.btn.go:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn.big{font-size:clamp(1.1rem,1.6vw,1.5rem);padding:1.1em 2em}
+
+.hero{position:relative;min-height:calc(100svh - 7rem);display:flex;flex-direction:column;justify-content:flex-end;padding-block:clamp(2rem,6vh,5rem) clamp(2.5rem,7vh,5rem)}
+.hero h1{font-size:clamp(2.2rem,12.5vw,9.5rem);margin-block:1.2rem 2rem;position:relative;z-index:1}
+.ln{display:block;overflow:hidden;padding-block:.06em}
+.ln>span{display:inline-block}
+.out{color:transparent;-webkit-text-stroke:.022em var(--ink)}
+.acc{color:var(--acc)}
+.hero-foot{display:grid;grid-template-columns:minmax(0,1.1fr) auto;gap:clamp(1.5rem,4vw,4rem);align-items:end;position:relative;z-index:1}
+.lead{font-size:clamp(1.05rem,1.5vw,1.4rem);max-width:34em;color:var(--mut)}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem}
+.blob{position:absolute;right:clamp(-6rem,-4vw,-2rem);top:4%;width:clamp(14rem,38vw,34rem);aspect-ratio:1;border-radius:50%;background:var(--panel);z-index:0}
+.sticker{position:absolute;right:clamp(1rem,7vw,7rem);top:clamp(1rem,9vh,6rem);width:clamp(6.5rem,13vw,11rem);aspect-ratio:1;z-index:2;display:grid;place-items:center;text-decoration:none}
+.sticker svg.ring{position:absolute;inset:0;width:100%;height:100%}
+.sticker text{font:600 9.4px "Inter Tight",sans-serif;letter-spacing:.2em;fill:var(--on)}
+.sticker .core{width:34%;color:var(--on);position:relative}
+
+.marq{background:var(--acc);color:var(--on);overflow:hidden;padding-block:clamp(.9rem,2vw,1.6rem);white-space:nowrap;display:flex}
+.marq-in{display:flex;flex:none;align-items:center}
+.marq span{font-size:clamp(1.6rem,4vw,3.6rem);padding-inline:.5em}
+.marq i{width:.55em;height:.55em;border-radius:50%;background:var(--on);flex:none;display:block;font-size:clamp(1.6rem,4vw,3.6rem)}
+
+section{padding-block:clamp(4rem,12vh,10rem)}
+h2{font-size:clamp(2rem,6vw,6rem);margin-bottom:clamp(2rem,5vw,4rem)}
+h2 .mark{position:relative;display:inline-block}
+h2 .mark svg{position:absolute;left:0;bottom:-.14em;width:100%;height:.22em;overflow:visible}
+h2 .mark path{fill:none;stroke:var(--acc);stroke-width:6;stroke-linecap:round}
+
+.treat{overflow:hidden}
+.track{display:flex;gap:clamp(1rem,2vw,1.75rem);overflow-x:auto;padding-bottom:1rem;scroll-snap-type:x mandatory}
+.js .track{overflow:visible;scroll-snap-type:none;width:max-content;padding-bottom:0}
+.card{flex:none;width:clamp(16rem,30vw,24rem);aspect-ratio:4/5;border-radius:clamp(1rem,2vw,2rem);background:var(--panel);padding:clamp(1.25rem,2.2vw,2rem);display:flex;flex-direction:column;justify-content:space-between;scroll-snap-align:start;transition:background-color .4s,color .4s}
+.card:nth-child(3n+2){border-radius:0}
+.card:hover{background:var(--acc);color:var(--on)}
+.card .no{font-size:clamp(3rem,6vw,5.5rem);color:var(--acc);transition:color .4s}
+.card:hover .no{color:var(--on)}
+.card h3{font-size:clamp(1.35rem,2.1vw,1.9rem);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin-bottom:.6rem}
+.card p{opacity:.8}
+
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,4vw,4rem);position:relative}
+.wire{position:absolute;left:0;top:1.6rem;width:100%;height:4rem;overflow:visible;pointer-events:none}
+.wire path{fill:none;stroke:var(--line);stroke-width:2}
+.step{position:relative}
+.step b{display:grid;place-items:center;width:3.2rem;height:3.2rem;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:600;margin-bottom:1.5rem}
+.step h3{font-size:clamp(1.3rem,2vw,1.8rem);font-weight:600;letter-spacing:-.02em;margin-bottom:.4rem}
+.step p{color:var(--mut)}
+
+.visit{background:var(--panel)}
+.visit-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+.facts{display:grid;gap:1.4rem;margin-bottom:2.5rem}
+.facts dt{color:var(--mut);margin-bottom:.3rem}
+.facts dd{font-size:clamp(1.1rem,1.6vw,1.45rem);font-weight:500;line-height:1.3}
+.map{border-radius:clamp(1rem,2vw,2rem);overflow:hidden;aspect-ratio:4/3;background:var(--line)}
+.map iframe{width:100%;height:100%;border:0;display:block;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.map:hover iframe{transform:scale(1.05)}
+form{display:grid;gap:1rem}
+label{font-size:.85rem;font-weight:600;display:grid;gap:.4rem}
+input,select{font:inherit;font-weight:400;padding:.9em 1em;border-radius:.8rem;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+input:focus,select:focus{outline:none;border-color:var(--acc)}
+
+.close{text-align:center;position:relative;overflow:hidden}
+.close h2{font-size:clamp(2.6rem,11vw,11rem);margin-bottom:clamp(2rem,5vw,3.5rem)}
+.ghost{position:absolute;left:50%;bottom:-.18em;translate:-50% 0;font-size:clamp(6rem,26vw,26rem);white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px var(--line);pointer-events:none;z-index:0}
+.close>*:not(.ghost){position:relative;z-index:1}
+
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem;padding-block:1.75rem 6rem;color:var(--mut);font-size:.85rem;border-top:1px solid var(--line)}
+.dock{position:fixed;left:0;right:0;bottom:0;display:none;gap:.5rem;padding:.6rem .75rem;background:var(--bg);border-top:1px solid var(--line);z-index:20}
+.dock .btn{flex:1;padding:.8em 1em}
+.cur{position:fixed;left:0;top:0;width:.7rem;height:.7rem;margin:-.35rem 0 0 -.35rem;border-radius:50%;background:var(--acc);pointer-events:none;z-index:90;mix-blend-mode:multiply;display:none}
+@media (prefers-color-scheme:dark){.cur{mix-blend-mode:screen}}
+.intro{position:fixed;inset:0;background:var(--acc);color:var(--on);z-index:100;display:grid;place-items:center;text-align:center;padding:1rem}
+.intro .disp{font-size:clamp(1.8rem,6vw,5rem);overflow:hidden}
+.intro .disp span{display:block}
+
+@media (max-width:820px){
+  nav,header .btn{display:none}.logo{max-width:100%}
+  .hero{min-height:0;padding-top:9.5rem}
+  .hero-foot,.visit-grid{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:minmax(0,1fr)}.wire{display:none}
+  .sticker{top:1rem;right:1rem}
+  .card{width:74vw}
+  .dock{display:flex}
+}
 </style>
 </head>
 <body>
 <div class="preview"><b>Preview</b> made for Clean and shine dental care by Adithya. This page is not live yet.</div>
-<div class="wrap">
-<header>
-  <div class="logo">Clean and shine dental care<small>Avadi, Chennai</small></div>
-  <a class="btn primary" href="https://wa.me/919123565996?text=Hi%20Clean%20and%20shine%20dental%20care%2C%20I%27d%20like%20to%20book%20an%20appointment."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Book on WhatsApp</a>
+
+<header class="pad">
+  <div class="logo">Clean and shine dental care</div>
+  <nav aria-label="Sections"><a class="ul" href="#treatments">Treatments</a><a class="ul" href="#how">How it works</a><a class="ul" href="#visit">Visit</a></nav>
+  <a class="btn go mag" href="https://wa.me/919123565996?text=Hi%20Clean%20and%20shine%20dental%20care%2C%20I%27d%20like%20to%20book%20an%20appointment."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Book now</a>
 </header>
 
-<div class="hero">
-  <div>
-    <div class="eyebrow">Dental care in Avadi</div>
-    <h1>Gentle, unhurried dental care in Avadi.</h1>
-    <p class="lead">Clean and shine dental care offers check-ups, root canals, braces and more. Message us on WhatsApp to pick a time that suits you.</p>
-    <div class="cta">
-      <a class="btn primary" href="https://wa.me/919123565996?text=Hi%20Clean%20and%20shine%20dental%20care%2C%20I%27d%20like%20to%20book%20an%20appointment."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Book on WhatsApp</a>
-      <a class="btn" href="tel:+919123565996"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> Call 091235 65996</a>
+<main>
+<div class="hero pad">
+  <div class="blob" data-par="-18"></div>
+  <a class="sticker mag" href="https://wa.me/919123565996?text=Hi%20Clean%20and%20shine%20dental%20care%2C%20I%27d%20like%20to%20book%20an%20appointment." aria-label="Book an appointment">
+    <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="var(--acc)"/><defs><path id="c" d="M50 50m-37 0a37 37 0 1 1 74 0a37 37 0 1 1-74 0"/></defs><text><textPath href="#c" textLength="226">BOOK A VISIT • BOOK A VISIT • </textPath></text></svg>
+    <svg class="core" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+  </a>
+  <p class="tag rv">Dental clinic · Avadi, Chennai</p>
+  <h1 class="disp"><span class="ln"><span>Good teeth</span></span><span class="ln"><span class="out">live in</span></span><span class="ln"><span class="acc">Avadi.</span></span></h1>
+  <div class="hero-foot">
+    <p class="lead rv">Check-ups, root canals, braces and more at Clean and shine dental care. Message us and pick a time that suits you.</p>
+    <div class="cta rv">
+      <a class="btn go mag" href="https://wa.me/919123565996?text=Hi%20Clean%20and%20shine%20dental%20care%2C%20I%27d%20like%20to%20book%20an%20appointment."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Book on WhatsApp</a>
+      <a class="btn mag" href="tel:+919123565996"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> 091235 65996</a>
     </div>
   </div>
-  <dl class="card facts">
-    <dt>Address</dt><dd>Sankar Nagar, Annanur, Chennai, Avadi, Tamil Nadu 600054</dd>
-    <dt>Phone</dt><dd><a href="tel:+919123565996">091235 65996</a></dd>
-    <dt>Appointments</dt><dd>WhatsApp or call to book a time</dd>
-  </dl>
 </div>
 
-<section id="services">
-  <h2>Treatments</h2>
-  <div class="services"><div class="svc"><h3>General check-up &amp; cleaning</h3><p>Scaling, polishing and a full check of teeth and gums.</p></div><div class="svc"><h3>Root canal treatment</h3><p>Save an infected tooth and stop the pain, usually in one or two visits.</p></div><div class="svc"><h3>Fillings</h3><p>Tooth-coloured fillings that match your natural teeth.</p></div><div class="svc"><h3>Braces &amp; aligners</h3><p>Metal, ceramic or clear aligners to straighten teeth.</p></div><div class="svc"><h3>Dental implants</h3><p>A fixed, natural-looking replacement for missing teeth.</p></div><div class="svc"><h3>Crowns &amp; bridges</h3><p>Restore broken or missing teeth with long-lasting crowns.</p></div></div>
+<div class="marq disp" aria-hidden="true"><div class="marq-in"><span>General check-up &amp; cleaning</span><i></i><span>Root canal treatment</span><i></i><span>Fillings</span><i></i><span>Braces &amp; aligners</span><i></i><span>Dental implants</span><i></i><span>Crowns &amp; bridges</span><i></i></div><div class="marq-in"><span>General check-up &amp; cleaning</span><i></i><span>Root canal treatment</span><i></i><span>Fillings</span><i></i><span>Braces &amp; aligners</span><i></i><span>Dental implants</span><i></i><span>Crowns &amp; bridges</span><i></i></div></div>
+
+<section class="treat pad" id="treatments">
+  <p class="tag rv">What we do</p>
+  <h2 class="disp rv">Teeth, <span class="mark">sorted.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12C60 2 120 18 170 9s90-6 126 3"/></svg></span></h2>
+  <div class="track"><article class="card"><div class="no disp">01</div><div><h3>General check-up &amp; cleaning</h3><p>Scaling, polishing and a full check of teeth and gums.</p></div></article><article class="card"><div class="no disp">02</div><div><h3>Root canal treatment</h3><p>Save an infected tooth and stop the pain, usually in one or two visits.</p></div></article><article class="card"><div class="no disp">03</div><div><h3>Fillings</h3><p>Tooth-coloured fillings that match your natural teeth.</p></div></article><article class="card"><div class="no disp">04</div><div><h3>Braces &amp; aligners</h3><p>Metal, ceramic or clear aligners to straighten teeth.</p></div></article><article class="card"><div class="no disp">05</div><div><h3>Dental implants</h3><p>A fixed, natural-looking replacement for missing teeth.</p></div></article><article class="card"><div class="no disp">06</div><div><h3>Crowns &amp; bridges</h3><p>Restore broken or missing teeth with long-lasting crowns.</p></div></article></div>
 </section>
 
-<section id="book">
-  <div class="book">
+<section class="pad" id="how">
+  <p class="tag rv">How it works</p>
+  <h2 class="disp rv">No waiting<br>room <span class="out">drama.</span></h2>
+  <div class="steps">
+    <svg class="wire" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true"><path d="M30 10C200 70 330 -30 500 12S820 60 980 8"/></svg>
+    <div class="step rv"><b>1</b><h3>Message us</h3><p>Tap the WhatsApp button and tell us what is bothering you.</p></div>
+    <div class="step rv"><b>2</b><h3>Pick a time</h3><p>We reply with the open slots. You choose the one that fits your day.</p></div>
+    <div class="step rv"><b>3</b><h3>Walk in</h3><p>Come at your time. We tell you the treatment and the cost before we start.</p></div>
+  </div>
+</section>
+
+<section class="visit pad" id="visit">
+  <p class="tag rv">Find us</p>
+  <h2 class="disp rv">Come say <span class="acc">aah.</span></h2>
+  <div class="visit-grid">
     <div>
-      <h2>Book a visit</h2>
-      <form id="f">
+      <dl class="facts rv">
+        <div><dt class="tag">Address</dt><dd>Sankar Nagar, Annanur, Chennai, Avadi, Tamil Nadu 600054</dd></div>
+        <div><dt class="tag">Phone</dt><dd><a class="ul" href="tel:+919123565996">091235 65996</a></dd></div>
+      </dl>
+      <form id="f" class="rv">
         <label>Your name<input name="n" required autocomplete="name"></label>
-        <label>Treatment
-          <select name="t"><option>General check-up &amp; cleaning</option><option>Root canal treatment</option><option>Fillings</option><option>Braces &amp; aligners</option><option>Dental implants</option><option>Crowns &amp; bridges</option><option>Not sure, need a check-up</option></select>
-        </label>
+        <label>Treatment<select name="t"><option>General check-up &amp; cleaning</option><option>Root canal treatment</option><option>Fillings</option><option>Braces &amp; aligners</option><option>Dental implants</option><option>Crowns &amp; bridges</option><option>Not sure, need a check-up</option></select></label>
         <label>Preferred day<input name="d" type="date" required></label>
-        <button class="btn primary" type="submit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Send request on WhatsApp</button>
+        <button class="btn go mag" type="submit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Send request</button>
       </form>
     </div>
-    <div class="map"><iframe loading="lazy" title="Map to Clean and shine dental care" src="https://maps.google.com/maps?q=Clean%20and%20shine%20dental%20care%2C%20Sankar%20Nagar%2C%20Annanur%2C%20Chennai%2C%20Avadi%2C%20Tamil%20Nadu%20600054&output=embed"></iframe></div>
+    <div class="map rv"><iframe loading="lazy" title="Map to Clean and shine dental care" src="https://maps.google.com/maps?q=Clean%20and%20shine%20dental%20care%2C%20Sankar%20Nagar%2C%20Annanur%2C%20Chennai%2C%20Avadi%2C%20Tamil%20Nadu%20600054&output=embed"></iframe></div>
   </div>
 </section>
-</div>
 
-<footer><div class="wrap">Clean and shine dental care · Sankar Nagar, Annanur, Chennai, Avadi, Tamil Nadu 600054</div></footer>
+<section class="close pad">
+  <div class="ghost disp" data-par="-12" aria-hidden="true">Avadi</div>
+  <p class="tag rv">Toothache does not wait</p>
+  <h2 class="disp rv">Let's fix<br>that <span class="acc">smile.</span></h2>
+  <a class="btn go big mag rv" href="https://wa.me/919123565996?text=Hi%20Clean%20and%20shine%20dental%20care%2C%20I%27d%20like%20to%20book%20an%20appointment."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Book on WhatsApp</a>
+</section>
+</main>
+
+<footer class="pad"><span>Clean and shine dental care</span><span>Sankar Nagar, Annanur, Chennai, Avadi, Tamil Nadu 600054</span></footer>
 <div class="dock">
   <a class="btn" href="tel:+919123565996"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> Call</a>
-  <a class="btn primary" href="https://wa.me/919123565996?text=Hi%20Clean%20and%20shine%20dental%20care%2C%20I%27d%20like%20to%20book%20an%20appointment."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> WhatsApp</a>
+  <a class="btn go" href="https://wa.me/919123565996?text=Hi%20Clean%20and%20shine%20dental%20care%2C%20I%27d%20like%20to%20book%20an%20appointment."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg> Book</a>
 </div>
+<div class="cur" aria-hidden="true"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
 <script>
 document.getElementById('f').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -113,6 +215,101 @@ document.getElementById('f').addEventListener('submit', function (e) {
   var msg = 'Hi, I am ' + f.get('n') + '. I would like to book: ' + f.get('t') + ' on ' + f.get('d') + '.';
   location.href = 'https://wa.me/919123565996?text=' + encodeURIComponent(msg);
 });
+
+(function () {
+  // The page is complete without motion. All hidden start states are set here, not in CSS.
+  if (!window.gsap || !window.Lenis || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin, CustomEase);
+  CustomEase.create('out', '0.16, 1, 0.3, 1');
+  CustomEase.create('inOut', '0.65, 0, 0.35, 1');
+  var DUR = { fast: 0.35, base: 0.8, slow: 1.2 }, STAGGER = 0.06;
+  var fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  document.documentElement.classList.add('js');
+
+  var lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+  gsap.ticker.lagSmoothing(0);
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); lenis.scrollTo(a.getAttribute('href'), { duration: 1.4 }); });
+  });
+
+  // Load intro (under 1.5 s), then the hero text reveal.
+  var intro = document.createElement('div');
+  intro.className = 'intro';
+  intro.innerHTML = '<div class="disp"><span></span></div>';
+  intro.querySelector('span').textContent = document.querySelector('.logo').textContent;
+  document.body.appendChild(intro);
+  var words = new SplitText('.hero h1 .ln > span', { type: 'words' }).words;
+  var heroBits = gsap.utils.toArray('.hero .rv');
+  gsap.set(words, { yPercent: 110 });
+  gsap.set(heroBits, { y: 40, opacity: 0 });
+  gsap.set('.sticker', { scale: 0, rotate: -90 });
+  gsap.set('.blob', { scale: 0.6, opacity: 0 });
+  gsap.timeline({ defaults: { ease: 'out' } })
+    .from(intro.querySelector('span'), { yPercent: 110, duration: 0.5 })
+    .to(intro, { yPercent: -100, duration: 0.7, ease: 'inOut' }, 0.75)
+    .set(intro, { display: 'none' })
+    .to('.blob', { scale: 1, opacity: 1, duration: DUR.slow }, 0.9)
+    .to(words, { yPercent: 0, duration: DUR.base, stagger: STAGGER }, 0.95)
+    .to(heroBits, { y: 0, opacity: 1, duration: DUR.base, stagger: 0.1 }, 1.25)
+    .to('.sticker', { scale: 1, rotate: 0, duration: DUR.slow, ease: 'elastic.out(1, 0.6)' }, 1.3);
+  gsap.to('.sticker .ring', { rotate: 360, duration: 14, ease: 'none', repeat: -1, transformOrigin: '50% 50%' });
+
+  // Scroll reveals: each block enters once.
+  gsap.utils.toArray('main section .rv').forEach(function (el) {
+    gsap.from(el, { y: 40, opacity: 0, duration: DUR.base, ease: 'out', scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
+  });
+  gsap.from('h2 .mark path', { drawSVG: 0, duration: DUR.slow, ease: 'inOut', scrollTrigger: { trigger: 'h2 .mark', start: 'top 80%', once: true } });
+  gsap.from('.wire path', { drawSVG: 0, ease: 'none', scrollTrigger: { trigger: '.steps', start: 'top 80%', end: 'bottom 60%', scrub: true } });
+
+  // Parallax on the decorative shapes.
+  gsap.utils.toArray('[data-par]').forEach(function (el) {
+    var p = parseFloat(el.dataset.par);
+    gsap.fromTo(el, { yPercent: -p }, { yPercent: p, ease: 'none', scrollTrigger: { trigger: el.parentNode, start: 'top bottom', end: 'bottom top', scrub: true } });
+  });
+
+  // Marquee: loops, and its speed and direction follow the scroll velocity.
+  var loop = gsap.to('.marq-in', { xPercent: -100, duration: 22, ease: 'none', repeat: -1 });
+  ScrollTrigger.create({
+    onUpdate: function (self) {
+      var v = gsap.utils.clamp(-6, 6, self.getVelocity() / 250);
+      var dir = v < 0 ? -1 : 1;
+      gsap.to(loop, { timeScale: dir * (1 + Math.abs(v)), duration: 0.2, overwrite: true });
+      gsap.to(loop, { timeScale: dir, duration: 1, delay: 0.25 });
+    }
+  });
+
+  // Pinned treatment track: vertical scroll moves the cards sideways.
+  var track = document.querySelector('.track'), treat = document.querySelector('.treat');
+  var dist = function () { return Math.max(0, track.scrollWidth - treat.clientWidth + parseFloat(getComputedStyle(treat).paddingLeft) * 2); };
+  gsap.to(track, { x: function () { return -dist(); }, ease: 'none',
+    scrollTrigger: { trigger: treat, start: 'center center', end: function () { return '+=' + dist(); }, pin: true, scrub: 0.6, invalidateOnRefresh: true } });
+
+  if (fine) {
+    // Magnetic buttons.
+    document.querySelectorAll('.mag').forEach(function (el) {
+      el.addEventListener('mousemove', function (e) {
+        var r = el.getBoundingClientRect();
+        gsap.to(el, { x: (e.clientX - r.left - r.width / 2) * 0.3, y: (e.clientY - r.top - r.height / 2) * 0.3, duration: DUR.fast, ease: 'out' });
+      });
+      el.addEventListener('mouseleave', function () { gsap.to(el, { x: 0, y: 0, duration: DUR.base, ease: 'elastic.out(1, 0.4)' }); });
+    });
+    // Cursor dot that follows with lag and grows over links and cards.
+    var cur = document.querySelector('.cur');
+    cur.style.display = 'block';
+    var cx = gsap.quickTo(cur, 'x', { duration: 0.45, ease: 'power3' }), cy = gsap.quickTo(cur, 'y', { duration: 0.45, ease: 'power3' });
+    addEventListener('mousemove', function (e) { cx(e.clientX); cy(e.clientY); });
+    document.querySelectorAll('a, button, .card, .map').forEach(function (el) {
+      el.addEventListener('mouseenter', function () { gsap.to(cur, { scale: 4, duration: DUR.fast, ease: 'out' }); });
+      el.addEventListener('mouseleave', function () { gsap.to(cur, { scale: 1, duration: DUR.fast, ease: 'out' }); });
+    });
+  }
+
+  var refresh = function () { ScrollTrigger.refresh(); };
+  addEventListener('load', refresh);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
+})();
 </script>
 </body>
 </html>
